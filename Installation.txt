@@ -1,0 +1,19 @@
+* Instructions on how to use Covana for detecting problems in test programs (From Covana Source folder, credits to author)
+
+
+ First and foremost the tool works with Visual Studio 2010. So intall it.
+1. Install Pex from http://research.microsoft.com/en-us/downloads/d2279651-851f-4d7a-bf05-16fd7eb26559/default.aspx
+2. Add Covana project into your project reference after downloading from http://pexase.codeplex.com/downloads/get/162796
+3. Add the following 5 properties in the AssemblyInfo.cs of your test project:
+[assembly: IssueTrack]
+[assembly: ProblemObserver]
+[assembly: IssueObserver]
+[assembly: AssemblyCoverageObserver]
+[assembly: ResultTrackingObserver]
+4. Select one of the examples under project Benchmarks
+5. Right click the class or method and then select "Run Pex Explorations"
+6. If there are assembly references missing, its due to the nature of automating the install process, please go into each of the references in all the  projects and remove and then add the references that have a yellow mark next to them.
+6. After Pex finish exploration, launch the project "CovanaAnalysisForm". A main window of Covana will show up.
+7. By default, the textfield of "AssemblyName" is filled with "Benchmarks", which is the name of the assembly for the example projects.
+8. Click the "Analyse" button to get result.
+
